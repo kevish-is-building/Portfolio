@@ -5,51 +5,27 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
-
-.heading {
-  display: flex;
-  justify-content: center;
-}
-/* From Uiverse.io by nikk7007 */ 
-button {
-  margin-top: 1rem;
-  padding: 0.8em 1.8em;
-  border: 2px solid #17C3B2;
-  position: relative;
-  overflow: hidden;
-  background-color: transparent;
+.heading p{
+  color: #fff;
   text-align: center;
-  text-transform: uppercase;
-  font-size: 16px;
-  transition: .3s;
-  z-index: 1;
-  font-family: inherit;
-  color: #17C3B2;
- }
- 
- button::before {
-  content: '';
-  width: 0;
-  height: 300%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(45deg);
-  background: #17C3B2;
-  transition: .5s ease;
-  display: block;
-  z-index: -1;
- }
- 
- button:hover::before {
-  width: 105%;
- }
- 
- button:hover {
-  color: #111;
- }
- 
+  font-size: 50px;
+  font-weight: bold;
+  z-index: inherit;
+}
+.heading span{
+  color: orange;
+  font-weight: bolder;
+  background-image: linear-gradient(#fff,#fff);
+  background-size: 0 5px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.2s ease-in-out;
+  border-radius: 15px;
+}
+.heading span:hover {
+  background-size: 100% 5px;
 
+}
 .header {
     width: 100vw;
     top: 0;
@@ -121,8 +97,7 @@ button {
 main {
   background-color: black;
 }
-.hero {
-  margin-top: -4rem;
+.translate {
   animation: lefttoright 1s ease forwards;
 }
 @keyframes lefttoright {
@@ -137,13 +112,14 @@ main {
   
 }
 .hero {
-    width: 100vw;
-    height: 100vh;
-    max-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 4rem;
+  margin-top: 2rem;
+  width: 100vw;
+  height: 90vh;
+  max-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 4rem;
 }
 
 .card img {
@@ -255,7 +231,7 @@ main {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    background-color: #ff0000;
+    background-color: orange;
     opacity: 1;
     filter: blur(12px);
     animation: blob-bounce 5s infinite ease;
