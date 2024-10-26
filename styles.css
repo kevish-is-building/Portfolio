@@ -5,6 +5,20 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
+.hero-section {
+    animation: lefttoright 1s ease forwards;
+}
+@keyframes lefttoright {
+    0%{
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+    
+}
 .header {
     width: 100vw;
     top: 0;
@@ -70,9 +84,11 @@
     font-weight: bold;
     margin-left: 35px;
 }
-
-.hero-section {
+main {
     background-color: black;
+}
+.hero-section {
+    
     width: 100vw;
     height: 100vh;
     max-height: 100vh;
