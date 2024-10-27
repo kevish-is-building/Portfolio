@@ -194,7 +194,7 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    box-shadow: 10px 10px 30px #bebebe, -10px -10px 30px #ffffff;
+    /* box-shadow: 10px 10px 30px #bebebe, -10px -10px 30px #ffffff; */
     ;
   }
   
@@ -217,10 +217,10 @@ main {
     height: 240px;
     z-index: 2;
     background: rgba(255, 255, 255, 1);
-    backdrop-filter: blur(24px);
+    /* backdrop-filter: blur(12px); */
     border-radius: 10px;
     overflow: hidden;
-    outline: 2px solid white;
+    /* outline: 2px solid white; */
   }
   
   .blob {
@@ -284,6 +284,6 @@ main {
 }
 
 .cards:hover > .card:not(:hover) {
-  filter: blur(10px);
+  filter: blur(6px);
   transform: scale(0.9, 0.9);
 }

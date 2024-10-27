@@ -131,6 +131,7 @@ main {
     height: 200px;
     display: flex;
     border-radius: 10px;
+    overflow: hidden;
 }
 .edu2 {
     background-color: white;
