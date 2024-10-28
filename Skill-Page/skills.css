@@ -128,9 +128,6 @@ main {
   height: 170px;
   object-fit: cover;
 }
-.node img {
-  display: none !important;
-}
 .card {
   text-align: center;
   font-size: x-large;

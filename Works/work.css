@@ -6,6 +6,9 @@
     font-family: 'Poppins', sans-serif;
 }
 .translate {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     animation: lefttoright 1s ease forwards;
   }
   @keyframes lefttoright {
@@ -125,8 +128,10 @@ main {
   }
 .display1 {
     display: flex;
-    /* flex-wrap: wrap; */
+    flex-direction: column;
     gap: 3rem;
+    width: 70vw;
+    margin-top: 2rem;
 }
 section {
     width: 50%;
@@ -136,6 +141,7 @@ a {
 }
 .card {
     height: fit-content;
+    width: 70vw;
     border: none;
     border-radius: 10px;
     background-color: black;
