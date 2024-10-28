@@ -174,5 +174,5 @@ h2 {
     transition: 0.5s;
 }
 .card:hover {
-    box-shadow: -17px 0px 5px green inset;
+    box-shadow: -15px 0px 5px rgba(225, 165, 0, 0.9) inset;
 }

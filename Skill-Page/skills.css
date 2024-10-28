@@ -114,11 +114,12 @@ main {
 .hero {
   margin-top: 2rem;
   width: 100vw;
-  height: 90vh;
-  max-height: 100vh;
+  height: fit-content;
+  min-height: 90vh;
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  flex-wrap: wrap;
   gap: 4rem;
 }
 

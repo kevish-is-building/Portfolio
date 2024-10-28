@@ -6,7 +6,10 @@
     font-family: 'Poppins', sans-serif;
 }
 .translate {
-    animation: lefttoright 1s ease forwards;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: lefttoright 1s ease forwards;
   }
   @keyframes lefttoright {
     0%{
@@ -113,16 +116,16 @@ main {
     justify-content: center;
   }
   .hero {
-    margin-top: -2rem;
+    /* margin-top: -2rem; */
     width: 85vw;
-    height: 100vh;
-    max-height: 96vh;
+    height: fit-content;
+    min-height: 96vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* align-items: flex-start; */
+    align-items: center;
     gap: 2rem;
-  }
+ }
 h1 {
   font-size: 40px;
   text-align: center;
@@ -130,6 +133,7 @@ h1 {
 }
 .display1 {
     display: flex;
+    flex-direction: column;
     gap: 3rem;
 }
 a {
@@ -168,7 +172,8 @@ a {
 
 .cards {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  width: 90%;
   gap: 2rem;
 }
 
@@ -186,10 +191,18 @@ a {
 
 
 .cards .card:hover {
-  transform: scale(1.1, 1.1);
+  transform: scale(1.05, 1.05);
 }
 
 .cards:hover > .card:not(:hover) {
   filter: blur(10px);
   transform: scale(0.9, 0.9);
+}
+
+
+
+@media screen and (max-width: 769px) {
+  .cards {
+    flex-direction: column;
+  }
 }
