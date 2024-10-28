@@ -79,13 +79,16 @@
     text-decoration: none;
     font-weight: bolder;
 }
-
+.navbar {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
 .navbar a {
     color: #956afa;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 25px;
     font-weight: bold;
-    margin-left: 35px;
 }
 main {
     background-color: black;
@@ -202,6 +205,18 @@ a {
 
 
 @media screen and (max-width: 769px) {
+  .header{
+    flex-direction: column;
+}
+.navbar{
+    font-size: 25px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+}
+
+
   .cards {
     flex-direction: column;
   }

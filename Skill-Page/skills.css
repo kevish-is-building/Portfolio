@@ -34,6 +34,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 2rem;
     padding: 10px 70px;
     backdrop-filter: blur(10px);
     border-bottom: 2px solid rgba(255, 255, 255, 0.2)
@@ -83,13 +84,16 @@
     text-decoration: none;
     font-weight: bolder;
 }
-
+.navbar {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
 .navbar a {
     color: #956afa;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 25px;
     font-weight: bold;
-    margin-left: 35px;
 }
 
                                     /* nav bar completed */
@@ -284,4 +288,19 @@ main {
 .cards:hover > .card:not(:hover) {
   filter: blur(6px);
   transform: scale(0.9, 0.9);
+}
+
+
+
+@media screen and (max-width: 769px) {
+  .header{
+    flex-direction: column;
+}
+.navbar{
+    font-size: 25px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+}
 }
