@@ -193,15 +193,6 @@ a {
 }
 
 
-.cards .card:hover {
-  transform: scale(1.05, 1.05);
-}
-
-.cards:hover > .card:not(:hover) {
-  filter: blur(10px);
-  transform: scale(0.9, 0.9);
-}
-
 
 
 @media screen and (max-width: 769px) {

@@ -4,7 +4,10 @@
     margin: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
 }
+
+/* Hero ...                                                                      */
 .hero-section {
     animation: lefttoright 1s ease forwards;
 }
@@ -17,7 +20,7 @@
         opacity: 1;
         transform: translateX(0);
     }
-    
+
 }
 .header {
     width: 100vw;
@@ -28,7 +31,7 @@
     justify-content: space-between;
     align-items: center;
     gap: 2rem;
-    padding: 10px 70px;
+    padding: 0.65rem 4.4rem;
     backdrop-filter: blur(10px);
     border-bottom: 2px solid rgba(255, 255, 255, 0.2)
 }
@@ -48,7 +51,7 @@
   
 .nav-container {
     position: relative;
-    padding: 3px;
+    padding: 0.25rem;
 }
   
 .nav-container::before {
@@ -73,7 +76,7 @@
 
 .logo a{
     color: orange;
-    font-size: 25px;
+    font-size: 1.65rem;
     text-decoration: none;
     font-weight: bolder;
 }
@@ -85,7 +88,7 @@
 .navbar a {
     color: #956afa;
     text-decoration: none;
-    font-size: 25px;
+    font-size: 1.65rem;
     font-weight: bold;
     /* margin-left: 35px; */
 }
@@ -93,7 +96,6 @@ main {
     background-color: black;
 }
 .hero-section {
-    
     width: 100vw;
     height: 100vh;
     max-height: 100vh;
@@ -104,7 +106,7 @@ main {
 }
 
 .hero-text {
-    font-size: 70px;
+    font-size: 4.4rem;
     font-weight: bold;
     color: aliceblue;
 
@@ -112,15 +114,6 @@ main {
 .texts .kevish {
     color: orange;
     font-weight: bolder;
-    background-image: linear-gradient(#fff,#fff);
-    background-size: 0 5px;
-    background-position: 0 100%;
-    background-repeat: no-repeat;
-    transition: background-size 0.2s ease-in-out;
-    border-radius: 15px;
-}
-.texts .kevish:hover {
-    background-size: 100% 5px;
 }
 
 #content {
@@ -130,7 +123,7 @@ main {
 }
 
 
-.card {
+.hero_card {
     --bg-color: #212121;
     background-color: var(--bg-color);
     padding: 1rem 2rem;
@@ -140,11 +133,11 @@ main {
     color: rgb(124, 124, 124);
     font-family: "Poppins", sans-serif;
     font-weight: 500;
-    font-size: 25px;
+    font-size: 1.65rem;
     -webkit-box-sizing: content-box;
     box-sizing: content-box;
-    height: 40px;
-    padding: 10px 10px;
+    height: 2.5rem;
+    padding: 0.7rem 0.7rem;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -171,7 +164,7 @@ main {
 .word {
     display: block;
     height: 100%;
-    padding-left: 6px;
+    padding-left: 0.5rem;
     color: #956afa;
     animation: spin 6s infinite 1s;
 }
@@ -220,10 +213,10 @@ main {
   
 .bubble {
     position: absolute;
-    width: 200px;
-    height: 200px;
+    width: 12.5rem;
+    height: 12.5rem;
     border-radius: 50%;
-    box-shadow: inset 0 0 25px rgba (255, 255, 255, 0.25);
+    box-shadow: inset 0 0 1.5rem rgba (255, 255, 255, 0.25);
     animation: animate_4010 8s ease-in-out infinite;
 }
   
@@ -261,11 +254,11 @@ main {
   
 @keyframes animate_4010 {
     0%,100% {
-      transform: translateY(-20px);
+      transform: translateY(-1.25rem);
     }
   
     50% {
-      transform: translateY(20px);
+      transform: translateY(1.25rem);
     }
 }
   
@@ -344,7 +337,420 @@ main {
 
 }
 @media screen and (max-width: 645px) {
-    .card{
+    .hero_card{
         display: none;
     }
 }
+
+/* hero End ...                                                     */
+
+/* Skills ...                                                       */
+
+.skills_heading p{
+    color: #fff;
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    z-index: inherit;
+  }
+  .skills_heading span{
+    color: orange;
+    font-weight: bolder;
+    background-image: linear-gradient(#fff,#fff);
+    background-size: 0 5px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.2s ease-in-out;
+    border-radius: 15px;
+  }
+  .skills_heading span:hover {
+    background-size: 100% 5px;
+  
+  }
+
+.skills_container {
+    margin-top: 2rem;
+    width: 100vw;
+    height: fit-content;
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 4rem;
+  }
+  
+  .skills_cards img {
+    width: 170px;
+    height: 170px;
+    object-fit: cover;
+  }
+  .skills_cards {
+    text-align: center;
+    font-size: x-large;
+  }
+  
+  .skills_section1 {
+      max-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 3rem;
+  
+  }
+  .skills_section2 {
+    max-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+  
+  }
+  .skills_section3 {
+    max-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+  
+  }
+  .skills_section4 {
+    max-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+  
+  }
+  .skills_section5 {
+    max-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+  
+  }
+  
+  
+  .skills_card {
+      position: relative;
+      width: 200px;
+      height: 250px;
+      border-radius: 14px;
+      z-index: 1111;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      /* box-shadow: 10px 10px 30px #bebebe, -10px -10px 30px #ffffff; */
+      ;
+    }
+    
+
+  
+    .skills_bg {
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      width: 190px;
+      height: 240px;
+      z-index: 2;
+      background: rgba(255, 255, 255, 1);
+      /* backdrop-filter: blur(12px); */
+      border-radius: 10px;
+      overflow: hidden;
+      /* outline: 2px solid white; */
+    }
+    
+    .skills_blob {
+      position: absolute;
+      z-index: 1;
+      top: 50%;
+      left: 50%;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background-color: orange;
+      opacity: 1;
+      filter: blur(12px);
+      animation: blob-bounce 5s infinite ease;
+    }
+    
+    @keyframes blob-bounce {
+      0% {
+        transform: translate(-100%, -100%) translate3d(0, 0, 0);
+      }
+    
+      25% {
+        transform: translate(-100%, -100%) translate3d(100%, 0, 0);
+      }
+    
+      50% {
+        transform: translate(-100%, -100%) translate3d(100%, 100%, 0);
+      }
+    
+      75% {
+        transform: translate(-100%, -100%) translate3d(0, 100%, 0);
+      }
+    
+      100% {
+        transform: translate(-100%, -100%) translate3d(0, 0, 0);
+      }
+    }
+  
+  .skills_cards {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .skills_cards .skills_card {
+    /* display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer; */
+    transition: 400ms;
+  }
+  
+  
+  .skills_cards .skills_card:hover {
+    transform: scale(1.1, 1.1);
+  }
+  
+  .skills_cards:hover > .skills_card:not(:hover) {
+    filter: blur(6px);
+    transform: scale(0.9, 0.9);
+  }
+
+/* Skills End ...                                               */
+
+/* Work ...                                                     */
+
+#work {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.work_heading p{
+    color: #fff;
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    z-index: inherit;
+  }
+  .work_heading span{
+    color: #956afa;
+    font-weight: bolder;
+    background-image: linear-gradient(#fff,#fff);
+    background-size: 0 5px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.2s ease-in-out;
+    border-radius: 15px;
+  }
+  .work_heading span:hover {
+    background-size: 100% 5px;
+  
+  }
+  .work_hero {
+    /* margin-top: 2rem; */
+    width: 70vw;
+    height: fit-content;
+    min-height: 93vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+.work_display1 {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    width: 70vw;
+    margin-top: 2rem;
+}
+.work_hero section {
+    width: 50%;
+}
+.work_hero a {
+    text-decoration: none;
+}
+.work_card {
+    height: fit-content;
+    width: 70vw;
+    border: none;
+    border-radius: 10px;
+    background-color: black;
+    background-blend-mode: normal, normal, screen, overlay, normal;
+    box-shadow: 0px 0px 10px 1px #000000;
+}
+.work_card img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 2%;
+    transition: 0.5s;
+}
+.work_card img:hover {
+    opacity: 0.7;
+}
+.work_card .para {
+    display: flex;
+    justify-content: space-between;
+}
+.work_card p {
+    display: inline;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    transition: 0.5s;
+}
+.work_card p:nth-child(1):hover {
+    color: orange;
+}
+.work_card #code:hover {
+    color: #956afa;
+}
+
+.work_btn {
+    padding: 0.2em 0.8em;
+    border: 2px solid #17C3B2;
+    position: relative;
+    overflow: hidden;
+    background-color: transparent;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 16px;
+    transition: .3s;
+    z-index: 1;
+    font-family: inherit;
+    color: #17C3B2;
+}
+
+.work_btn::before {
+    content: '';
+    width: 0;
+    height: 300%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    background: #17C3B2;
+    transition: .5s ease;
+    display: block;
+    z-index: -1;
+}
+
+.work_btn:hover::before {
+    width: 105%;
+}
+
+.work_btn:hover {
+    color: #111;
+}
+
+/* Work End ...                                                      */
+
+
+/* Education ...                                                     */
+
+#education {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.edu_heading p{
+    color: #fff;
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    z-index: inherit;
+  }
+  .edu_heading span{
+    color: orange;
+    font-weight: bolder;
+    background-image: linear-gradient(#fff,#fff);
+    background-size: 0 5px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.2s ease-in-out;
+    border-radius: 15px;
+  }
+  .edu_heading span:hover {
+    background-size: 100% 5px;
+  
+  }
+
+.edu_card h2 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #956afa;
+}
+.edu_card p {
+    font-size: 20px;
+}
+.edu_card p:nth-child(3) {
+    color: green;
+}
+.edu_card {
+    transition: 0.5s;
+}
+.edu_card:hover {
+    box-shadow: 0px -8px 5px rgba(225, 165, 0, 0.9) inset;
+}
+ .edu_wrapper {
+    width: 80vw;
+    height: fit-content;
+    min-height: 90vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* gap: 2rem; */
+ }
+ .edu_card img {
+    height: auto;
+    width: 100%;
+ }
+
+.edu_card {
+    border-radius: 2%;
+    margin: 4rem 0;
+    height: fit-content;
+    width: 90%;
+    background-color: #fff;
+    overflow: hidden;
+}
+.edu_card .edu_content {
+    padding: 2px 0 10px 10px;
+}
+
+/* Education End ...                                */
+
+/* Connect ...                                      */
+
+
+
+/* Connect End ...                                  */
