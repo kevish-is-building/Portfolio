@@ -11,7 +11,7 @@ hr {
 }
 /* Hero ...                                                                      */
 .hero-section {
-    animation: lefttoright 1s ease forwards;
+  animation: lefttoright 0.75s ease-out forwards;
 }
 @keyframes lefttoright {
     0%{
@@ -22,6 +22,40 @@ hr {
         opacity: 1;
         transform: translateX(0);
     }
+
+}
+/* nav animation */
+.head_container {
+  animation: TopToBottom 0.3s linear forwards;
+}
+@keyframes TopToBottom {
+  0%{
+      opacity: 0;
+      transform: translateY(-100%);
+  }
+  100%{
+      opacity: 1;
+      transform: translateY(0);
+  }
+
+}
+/* footer links animation */
+.social-login-icons {
+  animation: zoomIn 0.5s linear forwards;
+  transition: all 0.3s;
+  opacity: 0.7;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+@keyframes zoomIn {
+  0%{
+      transform: scale(0);
+  }
+  100%{
+      transform: scale(1);
+  }
 
 }
 .head_container::before {
@@ -38,18 +72,19 @@ hr {
     left: 100%;
 }
 .head_container{
-  width: 100%;
+  width: 50%;
   position:fixed;
-  top: 0;
-  left: 0;
+  overflow: hidden;
+  top: 1rem;
+  left: 25%;
   display: flex;
   justify-content: space-between;
   z-index: 100;
   align-items: center;
   gap: 2rem;
-  padding: 0.65rem 4.4rem;
+  padding: 0.65rem 2rem;
   backdrop-filter: blur(10px);
-  border-bottom: 2px solid rgba(255, 255, 255, 0.2)
+  border: 2px solid rgba(255, 255, 255, 0.2)
 }
 .nav-container {
     position: relative;
@@ -75,14 +110,28 @@ hr {
     filter: blur(0.2em);
 }
 main{
-  background-color: #000000;
+  background-color: #212121;
+  z-index: -1;
+}
+/* color GRADIENTS */
+.hero-section {
+  background: linear-gradient(180deg,#1E1211, #b2a39d) !important;
+}
+#skills {
+  background: linear-gradient(180deg,#b2a39d, #291a40) !important;
+}
+#work {
+  background: linear-gradient(180deg,#291a40, #b6b6b6) !important;
+}
+#education {
+  background: linear-gradient(180deg,#b6b6b6, #1f1b1d) !important;
 }
 
 .logo a{
     color: orange;
-    font-size: 1.65rem;
+    font-size: 1.75rem;
     text-decoration: none;
-    font-weight: bolder;
+    font-weight: 1200;
 }
 .navbar {
     display: flex;
@@ -92,8 +141,8 @@ main{
 .navbar a {
     color: #956afa;
     text-decoration: none;
-    font-size: 1.65rem;
-    font-weight: bold;
+    font-size: 1.75rem;
+    font-weight: 1200;
     /* margin-left: 35px; */
 }
 .hero-section {
@@ -120,15 +169,41 @@ main{
 #content {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    /* gap: 2rem; */
 }
 
 
 .hero_card {
+  width: 100%;
     --bg-color: #212121;
     background-color: var(--bg-color);
-    padding: 1rem 2rem;
+    padding: 0.5rem 1rem;
     border-radius: 1.25rem;
+}
+.hero_emo{
+  font-size: 2rem;
+  text-align: center;
+  position: relative;
+  left: -11.75rem;
+  top: -1rem;
+  animation: namaste infinite 3s ease-in-out;
+  transition: all 0.3s;
+  opacity: 0;
+
+}
+@keyframes namaste {
+  0% {
+    left: -11.75rem;
+    top: -1rem;
+  }
+  50% {
+    left: 2rem;
+  }
+}
+.hero-text:hover + .hero_emo {
+  opacity: 1;
 }
 .loader {
     color: rgb(124, 124, 124);
@@ -347,6 +422,10 @@ main{
 
 /* Skills ...                                                       */
 
+#skills {
+  padding-top: 5rem;
+}
+
 .skills_heading p{
     color: #fff;
     text-align: center;
@@ -534,11 +613,12 @@ main{
 /* Work ...                                                     */
 
 #work {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 2rem;
+  padding-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 2rem;
 }
 
 .work_heading p{
@@ -580,8 +660,7 @@ main{
     height: fit-content;
     width: 70vw;
     border: none;
-    border-radius: 0.7rem;
-    box-shadow: 0px 0px 10px 1px #000000;
+    box-shadow: 0px 0px 10px 2px #212121;
 }
 .work_card img {
     width: 100%;
@@ -589,9 +668,6 @@ main{
     object-fit: fill;
     /* border-radius: 2%; */
     transition: 0.75s;
-}
-.work_card img:hover {
-    opacity: 0.7;
 }
 .work_card .para {
     display: flex;
@@ -649,6 +725,7 @@ main{
 /* Education ...                                                     */
 
 #education {
+  padding-top: 5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -672,10 +749,11 @@ main{
     color: #956afa;
 }
 .edu_card p {
-    font-size: 1.25rem;
+  color: #fff;
+  font-size: 1.25rem;
 }
 .edu_card p:nth-child(3) {
-    color: green;
+    color: orange;
 }
 .edu_wrapper {
     width: 80vw;
@@ -699,7 +777,7 @@ main{
   margin: 4rem 0;
   height: fit-content;
   width: 90%;
-  background-color: #fff;
+  background-color: #212121;
   overflow: hidden;
 }
 .edu_card .edu_content {
@@ -713,3 +791,85 @@ main{
 
 
 /* Connect End ...                                  */
+
+/* Footer links ...                                  */
+
+footer {
+  height: auto;
+  width: 100%;
+  /* display: flex; */
+  /* justify-content: space-between;
+  align-items: center; */
+}
+
+.social-login-icons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+
+}
+.social-login-icons svg {
+  width: 40px;
+}
+
+.social-icon-1,
+.social-icon-2,
+.social-icon-3,
+.social-icon-4 {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.socialcontainer {
+  height: 50px;
+  overflow: hidden;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+.social-icon-1 {
+  transition-duration: 0.4s;
+  background-color: rgb(0, 0, 0);
+}
+.socialcontainer:hover .social-icon-1 {
+  transform: translateY(-50px);
+}
+.social-icon-2 {
+  transition-duration: 0.4s;
+  background: linear-gradient(
+    72.44deg,
+    #ff7a00 11.92%,
+    #ff0169 51.56%,
+    #d300c5 85.69%
+  );
+}
+.socialcontainer:hover .social-icon-2 {
+  transform: translateY(-50px);
+}
+.social-icon-3 {
+  transition-duration: 0.4s;
+  background: rgb(255, 33, 33);
+}
+
+.socialcontainer:hover .social-icon-3 {
+  transform: translateY(-50px);
+}
+.social-icon-4 {
+  transition-duration: 0.4s;
+  background: #0A66C2;
+}
+
+.socialcontainer:hover .social-icon-4 {
+  transform: translateY(-50px);
+}
+
+
+/* Footer Links End ...                               */
