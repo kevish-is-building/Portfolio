@@ -1,4 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Calistoga&family=Chivo:ital,wght@0,100..900;1,100..900&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Edu+AU+VIC+WA+NT+Arrows:wght@400..700&family=Lexend+Exa:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=MuseoModerno:ital,wght@0,100..900;1,100..900&family=Nabla&family=Nosifer&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playball&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&family=Tektur:wght@400..900&display=swap');
+
+
+
 * {
     padding: 0;
     margin: 0;
@@ -9,9 +13,13 @@
 hr {
   opacity: 0.5;
 }
+body {
+  background-color: #000000;
+  z-index: -1;
+}
 /* Hero ...                                                                      */
-.hero-section {
-  animation: lefttoright 0.75s ease-out forwards;
+#content {
+  animation: lefttoright 0.9s ease-out forwards;
 }
 @keyframes lefttoright {
     0%{
@@ -26,7 +34,7 @@ hr {
 }
 /* nav animation */
 .head_container {
-  animation: TopToBottom 0.3s linear forwards;
+  animation: TopToBottom 0.5s linear forwards;
 }
 @keyframes TopToBottom {
   0%{
@@ -114,11 +122,17 @@ main{
   z-index: -1;
 }
 /* color GRADIENTS */
-.hero-section {
-  background: linear-gradient(180deg,#1E1211, #b2a39d) !important;
+/* .hero-section {
+  background: linear-gradient(180deg,#000000, #b2a39d) !important;
 }
 #skills {
   background: linear-gradient(180deg,#b2a39d, #291a40) !important;
+} */
+#hero-section {
+  background: linear-gradient(180deg,#000000, #98bbf5) !important;
+}
+#skills {
+  background: linear-gradient(180deg,#98bbf5, #291a40) !important;
 }
 #work {
   background: linear-gradient(180deg,#291a40, #b6b6b6) !important;
@@ -131,7 +145,7 @@ main{
     color: orange;
     font-size: 1.75rem;
     text-decoration: none;
-    font-weight: 1200;
+    font-family: Nabla;
 }
 .navbar {
     display: flex;
@@ -141,11 +155,12 @@ main{
 .navbar a {
     color: #956afa;
     text-decoration: none;
-    font-size: 1.75rem;
-    font-weight: 1200;
+    font-size: 1.5rem;
+    font-family: Nabla;
+
     /* margin-left: 35px; */
 }
-.hero-section {
+#hero-section {
     width: 100vw;
     height: 100vh;
     max-height: 100vh;
@@ -163,7 +178,8 @@ main{
 }
 .texts .kevish {
     color: orange;
-    font-weight: bolder;
+    font-weight: 600;
+    font-family: Sour Gummy;
 }
 
 #content {
@@ -180,7 +196,7 @@ main{
     --bg-color: #212121;
     background-color: var(--bg-color);
     padding: 0.5rem 1rem;
-    border-radius: 1.25rem;
+    /* border-radius: 1.25rem; */
 }
 .hero_emo{
   font-size: 2rem;
@@ -206,9 +222,7 @@ main{
   opacity: 1;
 }
 .loader {
-    color: rgb(124, 124, 124);
-    font-family: "Poppins", sans-serif;
-    font-weight: 500;
+    color: #d0d0d0;
     font-size: 1.65rem;
     -webkit-box-sizing: content-box;
     box-sizing: content-box;
@@ -634,31 +648,30 @@ main{
 
   .work_hero {
     /* margin-top: 2rem; */
-    width: 70vw;
+    padding: 2rem;
+    width: 100vw;
     height: fit-content;
     min-height: 93vh;
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     gap: 2rem;
   }
 .work_display1 {
     display: flex;
     flex-direction: column;
     gap: 3rem;
-    width: 70vw;
+    /* width: 70vw; */
     margin-top: 2rem;
 }
-.work_hero section {
-    width: 50%;
-}
+
 .work_hero a {
     text-decoration: none;
 }
 .work_card {
     height: fit-content;
-    width: 70vw;
+    /* width: 70vw; */
     border: none;
     box-shadow: 0px 0px 10px 2px #212121;
 }
@@ -672,6 +685,7 @@ main{
 .work_card .para {
     display: flex;
     justify-content: space-between;
+    padding: 0.5rem 0.5rem;
 }
 .work_card p {
     display: inline;
@@ -726,10 +740,10 @@ main{
 
 #education {
   padding-top: 5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .edu_heading p{
@@ -758,30 +772,34 @@ main{
 .edu_wrapper {
     width: 80vw;
     height: fit-content;
-    min-height: 90vh;
+    min-height: 70vh;
 
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     justify-content: center;
     align-items: center;
-    /* gap: 2rem; */
+    gap: 2rem;
+}
+.edu_img_box {
+  height: 75%;
+  width: 100%;
 }
  .edu_card img {
-    height: auto;
+    height: 100%;
     width: 100%;
+    object-fit: contain;
  }
 
 .edu_card {
   border-end-start-radius: 2%;
   border-end-end-radius: 2%;
-  margin: 4rem 0;
-  height: fit-content;
-  width: 90%;
+  min-height: 50vh;
+  width: 50%;
   background-color: #212121;
   overflow: hidden;
 }
 .edu_card .edu_content {
-  padding: 2px 0 10px 10px;
+  padding: 1rem 0;
 }
 
 /* Education End ...                                */
@@ -794,13 +812,13 @@ main{
 
 /* Footer links ...                                  */
 
-footer {
+/* footer {
   height: auto;
   width: 100%;
-  /* display: flex; */
-  /* justify-content: space-between;
-  align-items: center; */
-}
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+} */
 
 .social-login-icons {
   display: flex;
@@ -871,5 +889,41 @@ footer {
   transform: translateY(-50px);
 }
 
+
+.down {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+}
+.btn_a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.397);
+  background: #956afa;
+  overflow: hidden;
+  font-size: 0.9rem;
+  font-weight: 600;
+  gap: 8px;
+  border-radius: 5px;
+  margin: 0 5px;
+  transition: 0.2s;
+  border: 1px solid transparent;
+  z-index: 3;
+}
+
+.btn_a:hover {
+  box-shadow: 0 6px orange;
+  transform: translateY(-6px);
+}
+
+.btn_a:active {
+  transform: translateY(2px);
+  box-shadow: none;
+}
 
 /* Footer Links End ...                               */
