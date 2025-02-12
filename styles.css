@@ -48,7 +48,6 @@ body {
 .social-login-icons {
   animation: zoomIn 0.5s linear forwards;
   transition: all 0.3s;
-  /* opacity: 0.7; */
 
   &:hover {
     opacity: 1;
@@ -57,7 +56,6 @@ body {
 .down {
   animation: zoomIn 0.5s linear forwards;
   transition: all 0.3s;
-  opacity: 0.7;
 
   &:hover {
     opacity: 1;
@@ -129,7 +127,7 @@ main{
 }
 /* color GRADIENTS */
 
-/* #hero-section {
+#hero-section {
   background: linear-gradient(180deg,#000000, #98bbf5) !important;
 }
 #skills {
@@ -140,7 +138,7 @@ main{
 }
 #education {
   background: linear-gradient(180deg,#b6b6b6, #000000) !important;
-} */
+}
 
 .logo a{
     color: orange;
@@ -692,7 +690,10 @@ main{
     height: 100%;
     object-fit: fill;
     /* border-radius: 2%; */
-    transition: 0.75s;
+    transition: 0.35s;
+}
+.work_card img:hover{
+  transform: scale(1.01);
 }
 .work_card .para {
     display: flex;
@@ -705,6 +706,12 @@ main{
     font-weight: bold;
     color: white;
     transition: 0.5s;
+}
+.work_card .github {
+  transition: 0.3s all;
+}
+.work_card .github:hover {
+  fill: #956afa;
 }
 .work_card p:nth-child(1):hover {
     color: orange;
@@ -841,6 +848,7 @@ footer {
 
 
 .main {
+  width: 100%;
   display: flex;
   width: fit-content;
   align-items: center;
@@ -854,7 +862,6 @@ footer {
   justify-content: center;
   /* width: 600px;
   height: 60px; */
-  border-top-left-radius: 10px;
   background: lightgrey;
   transition:
     0.4s ease-in-out,
@@ -867,8 +874,8 @@ footer {
 }
 
 .codeforces_to img{
-  height: 3rem;
-  width: 3rem;
+  height: 3.5rem;
+  width: 3.5rem;
   opacity: 0;
   transition: 0.2s ease-in-out;
   overflow: hidden;
@@ -879,6 +886,10 @@ footer {
   transition: 0.2s ease-in-out;
   fill: #000;
 }
+.youtube_to {
+  border-top-left-radius: 10px;
+}
+
 
 .card:nth-child(2) {
   border-radius: 0px;
@@ -888,7 +899,7 @@ footer {
   transition: 0.2s ease-in-out;
   fill: #000;
 }
-.card:nth-child(2) .link {
+.card .link {
   opacity: 0;
   transition: 0.2s ease-in-out;
   fill: #0a66c2;
@@ -896,7 +907,7 @@ footer {
 .card:nth-child(3) {
   border-radius: 0;
 }
-.card:nth-child(3) .instagram {
+.card .instagram {
   opacity: 0;
   transition: 0.2s ease-in-out;
   fill: #e4405f;
@@ -904,7 +915,7 @@ footer {
 .card:nth-child(4) {
   border-radius: 0px;
 }
-.card:nth-child(4) .twitter {
+.card .twitter {
   opacity: 0;
   transition: 0.2s ease-in-out;
   fill: black;
@@ -912,7 +923,7 @@ footer {
 .card:nth-child(5) {
   border-radius: 0px;
 }
-.card:nth-child(5) .leetcode {
+.card .leetcode {
   opacity: 0;
   transition: 0.2s ease-in-out;
   fill: black;
@@ -920,17 +931,17 @@ footer {
 .card:nth-child(6) {
   border-radius: 0px;
 }
-.card:nth-child(6) .codeforces_to{
+.card .codeforces_to{
   opacity: 0;
   transition: 0.2s ease-in-out;
   fill: black;
 }
-.card:nth-child(7) {
+.github_to {
   border-bottom-right-radius: 10px;
   border-top-left-radius: 0px;
 }
 
-.card:nth-child(7) .github {
+.github_to .github {
   opacity: 0;
   transition: 0.2s ease-in-out;
   fill: #000;
@@ -938,7 +949,7 @@ footer {
 
 
 .main:hover {
-  width: 14em;
+  width: fit-content;
   cursor: pointer;
 }
 .main:hover .main_back {
@@ -946,7 +957,7 @@ footer {
   backdrop-filter: blur(10px);
 }
 .main:hover .card {
-  margin: 0.2em;
+  margin: 0.65em;
   border-radius: 10px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -980,19 +991,19 @@ footer {
 }
 
 
-.card:nth-child(1):hover {
+a:nth-child(1):hover .youtube_to {
   background-color: #ff0000;
 }
-.card:nth-child(1):hover .youtube {
+a:nth-child(1):hover .youtube {
   fill: #fff;
 }
-.card:nth-child(2):hover {
+a:nth-child(2):hover .link_to{
   background-color: #0a66c2;
 }
-.card:nth-child(2):hover .link {
+a:nth-child(2):hover .link {
   fill: #fff;
 }
-.card:nth-child(3):hover {
+a:nth-child(3):hover .insta_to{
   background: linear-gradient(
     72.44deg,
     #ff7a00 11.92%,
@@ -1000,31 +1011,31 @@ footer {
     #d300c5 85.69%
   );
 }
-.card:nth-child(3):hover .instagram {
+a:nth-child(3):hover .instagram {
   fill: white;
 }
-.card:nth-child(4):hover {
+a:nth-child(4):hover .x_to{
   background-color: #000;
 }
-.card:nth-child(4):hover .twitter {
+a:nth-child(4):hover .twitter {
   fill: white;
 }
-.card:nth-child(5):hover {
+a:nth-child(5):hover .leetcode_to{
   background-color: #fff;
 }
-.card:nth-child(5):hover .leetcode {
+a:nth-child(5):hover .leetcode {
   fill: white;
 }
-.card:nth-child(6):hover {
+a:nth-child(6):hover .codeforces_to{
   background-color: #fff;
 }
-.card:nth-child(6):hover .codeforces {
+a:nth-child(6):hover .codeforces {
   fill: white;
 }
-.card:nth-child(7):hover {
+a:nth-child(7):hover .github_to{
   background-color: black;
 }
-.card:nth-child(7):hover .github {
+a:nth-child(7):hover .github {
   fill: white;
 }
 
@@ -1032,7 +1043,7 @@ footer {
 
 .text {
   position: absolute;
-  font-size: 0.75em;
+  font-size: 0.85em;
   transition: 0.4s ease-in-out;
   color: black;
   text-align: center;
@@ -1148,7 +1159,7 @@ footer {
   color: #fff;
 }
 
-
+/* Resume btn */
 .down {
   position: fixed;
   bottom: 0;
