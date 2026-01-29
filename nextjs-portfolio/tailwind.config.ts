@@ -1,0 +1,48 @@
+import type { Config } from 'tailwindcss'
+
+const config: Config = {
+  content: [
+    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+  ],
+  theme: {
+    extend: {
+      fontFamily: {
+        poppins: ['Poppins', 'sans-serif'],
+      },
+      colors: {
+        primary: '#3b82f6',
+        lime: '#c5f467',
+      },
+      screens: {
+        'max-lg': { max: '1100px' },
+        'max-md': { max: '768px' },
+      },
+      animation: {
+        'spin-words': 'spin 6s infinite',
+        'bubble': 'animate_bubble 8s ease-in-out infinite',
+      },
+      keyframes: {
+        spin: {
+          '10%': { transform: 'translateY(-102%)' },
+          '20%': { transform: 'translateY(-100%)' },
+          '30%': { transform: 'translateY(-202%)' },
+          '40%': { transform: 'translateY(-200%)' },
+          '50%': { transform: 'translateY(-302%)' },
+          '60%': { transform: 'translateY(-300%)' },
+          '70%': { transform: 'translateY(-402%)' },
+          '80%': { transform: 'translateY(-400%)' },
+          '90%': { transform: 'translateY(-502%)' },
+          '100%': { transform: 'translateY(-500%)' },
+        },
+        animate_bubble: {
+          '0%, 100%': { transform: 'translateY(-1.25rem)' },
+          '50%': { transform: 'translateY(1.25rem)' },
+        },
+      },
+    },
+  },
+  plugins: [],
+}
+export default config
