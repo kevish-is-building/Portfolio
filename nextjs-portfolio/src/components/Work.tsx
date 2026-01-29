@@ -1,5 +1,6 @@
 'use client'
 
+import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -57,12 +58,48 @@ const projects = [
 ]
 
 export default function Work() {
+  const [visibleProjects, setVisibleProjects] = useState<Set<number>>(new Set())
+  const [titleVisible, setTitleVisible] = useState(false)
+  const sectionRef = useRef<HTMLElement>(null)
+  
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setTitleVisible(true)
+          projects.forEach((_, index) => {
+            setTimeout(() => {
+              setVisibleProjects(prev => new Set([...prev, index]))
+            }, 300 + index * 200)
+          })
+          observer.disconnect()
+        }
+      },
+      { threshold: 0.1 }
+    )
+    
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current)
+    }
+    
+    return () => observer.disconnect()
+  }, [])
+  
   return (
-    <section id="work" className="flex flex-col items-center justify-center gap-16 py-16 px-8 max-w-[1200px] mx-auto">
-      <h2 className="text-3xl font-bold text-center">Featured Work</h2>
+    <section ref={sectionRef} id="work" className="flex flex-col items-center justify-center gap-16 py-16 px-8  mx-auto">
+      <h2 className={`text-3xl font-bold text-center transition-all duration-700 ${
+        titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+      }`}>Featured Work</h2>
       
       {projects.map((project, index) => (
-        <div key={index}>
+        <div 
+          key={index}
+          className={`transition-all duration-700 ${
+            visibleProjects.has(index) 
+              ? 'opacity-100 translate-y-0' 
+              : 'opacity-0 translate-y-12'
+          }`}
+        >
           <div className={`flex max-lg:flex-col gap-8 items-start w-full ${project.reverse ? 'flex-row-reverse' : ''}`}>
             <div className="w-full md:w-1/2">
               <Image 
@@ -120,7 +157,9 @@ export default function Work() {
         </div>
       ))}
       
-      <p className="text-lg">
+      <p className={`text-lg transition-all duration-700 delay-1000 ${
+        titleVisible ? 'opacity-100' : 'opacity-0'
+      }`}>
         For More Such work{' '}
         <Link href="https://github.com/Kevish07" className="text-orange-500 hover:underline">
           Check out this

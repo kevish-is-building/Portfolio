@@ -1,5 +1,6 @@
 'use client'
 
+import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 
 const experiences = [
@@ -42,12 +43,46 @@ const experiences = [
 ]
 
 export default function Experience() {
+  const [visibleCards, setVisibleCards] = useState<Set<number>>(new Set())
+  const [titleVisible, setTitleVisible] = useState(false)
+  const sectionRef = useRef<HTMLElement>(null)
+  
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setTitleVisible(true)
+          experiences.forEach((_, index) => {
+            setTimeout(() => {
+              setVisibleCards(prev => new Set([...prev, index]))
+            }, 200 + index * 150)
+          })
+          observer.disconnect()
+        }
+      },
+      { threshold: 0.2 }
+    )
+    
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current)
+    }
+    
+    return () => observer.disconnect()
+  }, [])
+  
   return (
-    <section id="experience" className="flex flex-col gap-8 py-16 px-8 max-w-[1200px] mx-auto">
-      <h2 className="text-3xl font-bold text-center">Experience</h2>
+    <section ref={sectionRef} id="experience" className="flex flex-col gap-8 py-16 px-8  mx-auto">
+      <h2 className={`text-3xl font-bold text-center transition-all duration-700 ${
+        titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+      }`}>Experience</h2>
       
       {experiences.map((exp, index) => (
-        <div key={index} className="border border-gray-200 rounded-lg bg-white shadow-sm overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+        <div 
+          key={index} 
+          className={`border border-gray-200 rounded-lg bg-white shadow-sm overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:shadow-lg ${
+            visibleCards.has(index) ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
+          }`}
+        >
           <div className="flex max-md:flex-col max-md:items-center max-md:text-center gap-6 p-6">
             <div className="w-20 h-20 bg-white p-2 rounded-md flex items-center justify-center overflow-hidden flex-shrink-0">
               <Image 

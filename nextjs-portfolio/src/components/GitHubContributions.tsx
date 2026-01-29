@@ -200,7 +200,7 @@ export default function GitHubContributions() {
 
   if (loading) {
     return (
-      <div className="w-full max-w-[700px] max-lg:max-w-full">
+      <div className="w-fit max-w-[700px] max-lg:max-w-fit">
         <div className="bg-[#f8f9fa] rounded-2xl p-6 animate-pulse">
           <div className="h-4 bg-gray-200 rounded w-32 mb-4"></div>
           <div className="flex flex-wrap gap-2 mb-4">
@@ -231,7 +231,7 @@ export default function GitHubContributions() {
   ]
 
   return (
-    <div className="w-full max-w-[700px] max-lg:max-w-full">
+    <div className="w-fit max-w-[700px] max-lg:max-w-fit">
       <div className="bg-[#f8f9fa] rounded-2xl p-6 shadow-sm border border-gray-100">
         {/* Header */}
         <div className="flex items-center justify-between mb-4">
@@ -268,7 +268,7 @@ export default function GitHubContributions() {
         {/* Contribution Graph with Animation */}
         <div className="bg-white rounded-xl p-4 border border-gray-100 relative" ref={graphRef}>
           <p className="text-xs text-gray-500 mb-3">Contribution Graph (Last Year)</p>
-          <div className="w-full overflow-x-auto overflow-y-visible">
+          <div className="w-fit">
             <div className="flex gap-[2px] min-w-max">
               {contributions.map((week, weekIdx) => (
                 <div key={weekIdx} className="flex flex-col gap-[2px]">

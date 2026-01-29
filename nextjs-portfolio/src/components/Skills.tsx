@@ -1,5 +1,6 @@
 'use client'
 
+import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 
 const skills = [
@@ -26,13 +27,48 @@ const skills = [
 ]
 
 export default function Skills() {
+  const [visibleCards, setVisibleCards] = useState<Set<number>>(new Set())
+  const [titleVisible, setTitleVisible] = useState(false)
+  const sectionRef = useRef<HTMLElement>(null)
+  
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setTitleVisible(true)
+          // Stagger animation for each skill card
+          skills.forEach((_, index) => {
+            setTimeout(() => {
+              setVisibleCards(prev => new Set([...prev, index]))
+            }, 100 + index * 50)
+          })
+          observer.disconnect()
+        }
+      },
+      { threshold: 0.2 }
+    )
+    
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current)
+    }
+    
+    return () => observer.disconnect()
+  }, [])
+  
   return (
-    <section id="skills" className="bg-gray-200/50 flex flex-col items-center justify-center gap-8 py-16 px-8">
-      <h2 className="text-3xl font-bold text-center">Skills</h2>
+    <section ref={sectionRef} id="skills" className="bg-gray-200/50 flex flex-col items-center justify-center gap-8 py-16 px-8">
+      <h2 className={`text-3xl font-bold text-center transition-all duration-700 ${
+        titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+      }`}>Skills</h2>
       
-      <div className="grid grid-cols-4 max-lg:grid-cols-3 max-md:grid-cols-2 gap-6 max-w-[1200px]">
+      <div className="grid grid-cols-4 max-lg:grid-cols-3 max-md:grid-cols-2 gap-6 ">
         {skills.map((skill, index) => (
-          <div key={index} className="flex flex-col justify-center items-center gap-4 bg-white py-6 px-8 rounded-lg shadow-sm text-center transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+          <div 
+            key={index} 
+            className={`flex flex-col justify-center items-center gap-4 bg-white py-6 px-8 rounded-lg shadow-sm text-center transition-all duration-500 hover:shadow-lg hover:-translate-y-1 ${
+              visibleCards.has(index) ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-8 scale-95'
+            }`}
+          >
             <Image 
               src={skill.icon} 
               alt={`${skill.name} logo`}
