@@ -74,7 +74,8 @@ export default function Experience() {
     <section ref={sectionRef} id="experience" className="flex flex-col gap-8 py-16 px-8  mx-auto">
       <h2 className={`text-3xl font-bold text-center transition-all duration-700 ${
         titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-      }`}>Experience</h2>
+      }`}>Experiences</h2>
+
       
       {experiences.map((exp, index) => (
         <div 
