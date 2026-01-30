@@ -5,7 +5,7 @@ import Link from 'next/link'
 export default function Header() {
   return (
     <header className="w-full max-md:hidden fixed overflow-hidden top-2 flex justify-between z-[100] items-center gap-8 py-2.5 px-8 max-lg:px-4 backdrop-blur-sm border-2 border-white/60 bg-white/80 rounded-lg">
-        <Link href="/" className="text-sm font-medium text-black no-underline tracking-wider">
+        <Link href="#home" className="text-sm font-medium text-black no-underline tracking-wider">
           &lt;KEVISH SEWLIYA /&gt;
         </Link>
 

@@ -12,17 +12,17 @@ const projects = [
     technologies: ['Node js', 'Express', 'Prisma', 'PostgreSQL', 'Auth0', 'React', 'Monaco-editor', 'Tailwind CSS', 'Zod', 'Zustand'],
     features: ['Learning platform', 'Custom problem sets', 'Integrated environment', 'Integrated code execution environment', 'Cloud Storage', 'Personal problem sheets', 'Level based learning'],
     liveDemo: 'https://loveleetcode.in',
-    sourceCode: null,
+    sourceCode: 'https://github.com/kevish-is-building/love-leetcode-platform',
     reverse: false
   },
   {
-    title: 'Dcode (deprecated)',
+    title: 'Dcode',
     image: '/Dcode.png',
     description: 'A full-stack web application for open source contribution with exciting rewards and managing multiple repositories. Your open-source contributing platform, built with React.js, facilitates seamless collaboration on open-source projects. It enables developers to explore projects, contribute via pull requests, and engage with maintainers.',
     technologies: ['React', 'Node.js', 'Firebase', 'MongoDB', 'Firebase Auth', 'Auth0'],
     features: ['User Authentication', 'Contribution Management', 'Leaderboard Recognition', 'Task assignment', 'Progress tracking', 'Admin Tools'],
-    liveDemo: 'https://dcode-v1.vercel.app/',
-    sourceCode: null,
+    liveDemo: 'https://dcode.codes',
+    sourceCode: 'https://github.com/DCODE-HQ/DCODE-platform',
     reverse: true
   },
   {

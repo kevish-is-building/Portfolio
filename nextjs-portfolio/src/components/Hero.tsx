@@ -59,12 +59,12 @@ export default function Hero() {
       </span>
     ))
   }
-  
+
   return (
     <section id="home" className="min-h-screen w-full flex flex-col items-center justify-center py-20">
-      <div className="flex flex-col max-w-[1400px] w-full px-16 gap-8 max-lg:px-8 max-md:px-4">
+      <div className="flex flex-col w-full px-16 gap-8 max-lg:px-8 max-md:px-4">
         {/* Top Section - Title */}
-        <div className="w-full">
+        <div className="w-full mx-auto ">
           
           <h1 className="text-[5rem] font-black leading-[1.05] tracking-[-3px] mb-4 uppercase max-lg:text-[3.5rem] max-md:text-[2.5rem] max-md:tracking-[-1px]">
             <span className="block">{renderAnimatedText(titleLine1, 0)}</span>

@@ -5,6 +5,18 @@ import Image from 'next/image'
 
 const experiences = [
   {
+    logo: '/Dev-Club.jpeg',
+    title: 'Full Stack Developer',
+    company: 'Dev Club',
+    duration: 'August 2024 - Present',
+    description: 'Produced frontend products for university infrastructure. Worked with JavaScript, Tailwind, React js.',
+    achievements: [
+      'Learned how to handle conflicts while collaborating in a huge code base product',
+      'Got involved deep usage of git and github for working on open source projects',
+      'Currently working on identifying real world problems to make a ease'
+    ]
+  },
+  {
     logo: '/Neutron.png',
     title: 'Frontend Developer',
     company: 'Neutron Fest',
@@ -28,18 +40,6 @@ const experiences = [
       'Contributed to GFG POTD problems and added more algorithms'
     ]
   },
-  {
-    logo: '/Dev-Club.jpeg',
-    title: 'Full Stack Developer',
-    company: 'Dev Club',
-    duration: 'August 2024 - Present',
-    description: 'Produced frontend products for university infrastructure. Worked with JavaScript, Tailwind, React js.',
-    achievements: [
-      'Learned how to handle conflicts while collaborating in a huge code base product',
-      'Got involved deep usage of git and github for working on open source projects',
-      'Currently working on identifying real world problems to make a ease'
-    ]
-  }
 ]
 
 export default function Experience() {
