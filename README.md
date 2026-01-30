@@ -1,41 +1,83 @@
-# Portfolio
+# Kevish Sewliya Portfolio - Next.js
 
-This is a personal portfolio website for Kevish Sewliya. It showcases projects, skills, and contact information in a visually appealing format.
+A modern portfolio website built with Next.js 14, TypeScript, and Tailwind CSS.
 
 ## Features
-- Responsive design
-- Project gallery with images
-- Downloadable resume
-- Contact information
+
+- ⚡ Built with Next.js 14 App Router
+- 🎨 Styled with Tailwind CSS
+- 📱 Fully responsive design
+- 🌙 Modern hero section with GitHub contributions graph
+- 💼 Experience, Skills, Projects, and Education sections
+- 🔗 Social media links with interactive hover effects
 
 ## Getting Started
-To view the portfolio locally:
-1. Clone the repository:
+
+### Prerequisites
+
+- Node.js 18.17 or later
+- npm or yarn
+
+### Installation
+
+1. Navigate to the project directory:
    ```bash
-   git clone https://github.com/kevish-is-building/Portfolio.git
+   cd nextjs-portfolio
    ```
-2. Open `index.html` in your browser.
 
-## File Structure
-- `index.html` — Main webpage
-- `styles.css` — Stylesheet
-- `Assests/` — Images and resume
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-## Notable Projects
-- NeonWave
-- Health-Up
-- Loveleetcode
-- Zenfolio
-- RU Campus
-- Dev Club
+3. Copy your assets from the parent `Assests` folder to `public/`:
+   ```bash
+   cp -r ../Assests/* public/
+   ```
 
-## Resume
-You can download the resume [here](Assests/Resume-Kevish%20Sewliya-2028.pdf).
+4. Run the development server:
+   ```bash
+   npm run dev
+   ```
 
-## Contact
-- Email: kevish.sewliya@example.com
-- LinkedIn: [Kevish Sewliya](https://www.linkedin.com/in/kevishsewliya)
-- GitHub: [kevish-is-building](https://github.com/kevish-is-building)
+5. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## Project Structure
+
+```
+nextjs-portfolio/
+├── public/               # Static assets (images, favicon, resume)
+├── src/
+│   ├── app/
+│   │   ├── globals.css   # Global styles
+│   │   ├── layout.tsx    # Root layout
+│   │   └── page.tsx      # Home page
+│   └── components/
+│       ├── Header.tsx
+│       ├── Hero.tsx
+│       ├── GitHubContributions.tsx
+│       ├── Experience.tsx
+│       ├── Skills.tsx
+│       ├── Work.tsx
+│       ├── Education.tsx
+│       └── Footer.tsx
+├── package.json
+├── tailwind.config.ts
+├── tsconfig.json
+└── next.config.js
+```
+
+## Build for Production
+
+```bash
+npm run build
+npm start
+```
+
+## Deploy
+
+This project can be easily deployed on [Vercel](https://vercel.com/), [Netlify](https://netlify.com/), or any other hosting platform that supports Next.js.
 
 ## License
-This project is open source and available under the [MIT License](LICENSE).
+
+MIT
