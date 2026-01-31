@@ -1,14 +1,16 @@
-import Header from '@/components/Header'
-import Hero from '@/components/Hero'
-import Experience from '@/components/Experience'
-import Skills from '@/components/Skills'
-import Work from '@/components/Work'
-import Education from '@/components/Education'
-import Footer from '@/components/Footer'
+import Header from "@/components/Header";
+import Hero from "@/components/Hero";
+import Experience from "@/components/Experience";
+import Skills from "@/components/Skills";
+import Work from "@/components/Work";
+import Education from "@/components/Education";
+import Footer from "@/components/Footer";
+import { Analytics } from "@vercel/analytics/next";
 
 export default function Home() {
   return (
     <>
+      <Analytics />
       <Header />
       <main>
         <Hero />
@@ -19,5 +21,5 @@ export default function Home() {
       </main>
       <Footer />
     </>
-  )
+  );
 }
